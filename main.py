@@ -48,12 +48,13 @@ def pay_salary(env, venture_fond):
         venture_fond.pay_salary_quarterly()
 
 
-def investor_money_flow(env, venture_fond):
+def investor_money_flow(env, venture_fund):
     while True:
         yield env.timeout(Time.Month)
-        venture_fund.income_outcome_flow.append([venture_fond.income_flow, venture_fond.outcome_flow])
-        venture_fond.income_flow = 0
-        venture_fond.outcome_flow = 0
+        venture_fund.res_income_flow.append(venture_fund.income_flow)
+        venture_fund.res_outcome_flow.append(venture_fund.outcome_flow)
+        venture_fund.income_flow = 0
+        venture_fund.outcome_flow = 0
 
 
 if __name__ == '__main__':

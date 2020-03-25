@@ -1,5 +1,6 @@
 import json
 import simpy
+import numpy as np
 import random
 from enum import Enum, IntEnum
 
@@ -44,3 +45,11 @@ def get_config(path):
     with open(path, 'r') as f:
         config = json.load(f)
     return config
+
+
+def combine_income_outcome_flows(a, b):
+    a = -np.array(a)
+    res = [None]*(len(a)+len(b))
+    res[::2] = a
+    res[1::2] = b
+    return res

@@ -73,7 +73,8 @@ class VentureCapitalFund:
         self.outcome_flow = 0
         self.companies = []
         
-        self.income_outcome_flow = []
+        self.res_income_flow = []
+        self.res_outcome_flow = []
 
     # ===================================++=======================
     # Investment
